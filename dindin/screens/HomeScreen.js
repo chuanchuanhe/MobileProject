@@ -75,7 +75,7 @@ export default class HomeScreen extends React.Component {
       return (
         <Text style={styles.developmentModeText}>
           Development mode is enabled, your app will be slower but you can use useful development
-          tools!!! {learnMoreButton}
+          tools. {learnMoreButton}
         </Text>
       );
     } else {
@@ -101,7 +101,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'green',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     right: 0,
     ...Platform.select({
       ios: {
-        shadowColor: 'blue',
+        shadowColor: 'black',
         shadowOffset: { height: -3 },
         shadowOpacity: 0.1,
         shadowRadius: 3,

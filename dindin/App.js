@@ -1,5 +1,21 @@
-import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import splash from './components/splash';
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import  Homescreen from "./components/Homescreen2"
+import { createAppContainer, createStackNavigator } from 'react-navigation'; 
+import { Constants } from 'expo';
+
+const RootStack = createStackNavigator(
+  {
+    home: Homescreen,
+    splash: splash
+  }, {
+    initialRouteName: 'splash'
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
+/*import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
@@ -60,3 +76,66 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+var GobalSpace = {
+  url: "https://catfact.ninja/fact"
+}
+export default class App extends React.Component {
+  constructor(props){
+   super(props);
+   this.state ={ isLoading: true}
+ }
+
+ componentDidMount() {
+   this.timerID = setInterval(() => {this.tick()}, 7000);
+ }
+ tick() {
+   return fetch(GobalSpace.url).then(
+     (response) => response.json()).then(
+       response =>{
+         this.setState({catFact: response, isLoading: false})
+       }
+   )
+ }
+
+ render(){
+   if(this.state.isLoading){
+     return(
+       <Splash/>
+     )
+   }
+
+   return(
+     <View style={styles.centerAlign}>
+       <Text style={styles.fact}> 
+       {this.state.catFact.fact}
+       </Text>
+     </View>
+   );
+ }
+
+}
+
+const styles = StyleSheet.create({
+  centerAlign:{
+          flex: 1,
+          alignContent:"center",
+          flexDirection: "column",
+          justifyContent: "center",
+          backgroundColor: "#000D0C"
+
+  },
+  fact:{
+    color: 'white',
+    padding: 40,
+    fontSize: 20,
+  }
+})*/ 
+
+export default class App extends React.Component {
+
+  render() {
+    return (
+      <AppContainer/>
+    )
+  }
+}
