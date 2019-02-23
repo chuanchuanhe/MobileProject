@@ -5,13 +5,14 @@ import { Constants, LinearGradient, Image } from 'expo';
 export default class Homescreen2 extends React.Component {
     render() {
       return (
-      <View style={styles.background}/> 
+      <View style={styles.container}/> 
       ) 
     }
   }
 
   const styles = StyleSheet.create({
-    background: {
-        color: 'black',
+    container: {
+      flex: 1,
+      backgroundColor: 'pink',
       },
   })
