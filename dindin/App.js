@@ -1,4 +1,5 @@
 import splash from './components/splash';
+import Homescreen2 from './components/Homescreen2';
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import  Homescreen from "./components/Homescreen2"
@@ -7,7 +8,7 @@ import { Constants } from 'expo';
 
 const RootStack = createStackNavigator(
   {
-    home: Homescreen,
+    home: Homescreen2,
     splash: splash
   }, {
     initialRouteName: 'splash'
