@@ -5,10 +5,14 @@ import { Text, View, StyleSheet } from 'react-native';
 import  Homescreen from "./components/Homescreen2"
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
+import MainScreen from './components/MainScreen';
+import LoginScreen from './components/LoginScreen'
 
 const RootStack = createStackNavigator(
   {
     home: Homescreen2,
+    Login: LoginScreen,
+    Main: MainScreen,
     splash: splash
   }, {
     initialRouteName: 'splash'
