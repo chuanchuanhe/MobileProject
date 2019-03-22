@@ -31,7 +31,7 @@ export default class Splash extends React.Component {
       <Text style={styles.subtitle}>connecting food lovers</Text>
       <TouchableOpacity 
         style={styles.button}
-        onPress={() => this.props.navigation.navigate('home')}>
+        onPress={() => this.props.navigation.navigate('login')}>
         <Text> Get Started </Text>
       </TouchableOpacity> 
     </View> 
@@ -56,7 +56,7 @@ export default class Splash extends React.Component {
       fontSize: 23,
       marginTop: 5,
       width: 200,
-      fontFamily: 'Helvetica',
+      fontFamily: 'Helvetica Neue',
     },
     subtitle:{
       color: 'grey',
