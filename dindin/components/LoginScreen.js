@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity, Button, Alert } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import {I18n} from '../src/i18n/I18n';
 import { Constants, Facebook } from 'expo';
 import MainScreen from './MainScreen';
 
@@ -52,7 +53,7 @@ export default class LoginScreen extends React.Component {
         this.handleFacebookLogin(this.props.navigation)
         }
         >
-        <Text> Login with Facebook </Text>
+        <Text> {I18n.t('Login')} </Text>
       </TouchableOpacity>
       </View>
     );

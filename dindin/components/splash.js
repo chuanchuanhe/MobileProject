@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {I18n} from '../src/i18n/I18n';
 import { Text, View, StyleSheet, Image, TouchableOpacity, Animated} from 'react-native'; 
 
 export default class Splash extends React.Component {
@@ -27,13 +28,13 @@ export default class Splash extends React.Component {
         {this.props.children}
         <Image style={styles.avatarStyle} source={require('../assets/images/avatar.png')} />
       </Animated.View>
-      <Text style={styles.title}>DinDin </Text>
-      <Text style={styles.subtitle}>connecting food lovers</Text>
+      <Text style={styles.title}>{I18n.t('DinDin')} </Text>
+      <Text style={styles.subtitle}>{I18n.t('connecting')}</Text>
       <TouchableOpacity 
         ref="touch"
         style={styles.button}
         onPress={() => this.props.navigation.navigate('login')}>
-        <Text> Get Started </Text>
+        <Text> {I18n.t('Get_Started')} </Text>
       </TouchableOpacity> 
     </View>
     )
