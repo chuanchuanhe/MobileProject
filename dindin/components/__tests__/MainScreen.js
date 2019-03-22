@@ -8,7 +8,7 @@ export default class MainScreen extends React.Component {
         <Text style={styles.paragraph}>
           Great you logged in
         </Text>
-        <Image style={styles.logo} source={require('../assets/images/avatar.png')} />
+        <Image style={styles.logo} source={require('../assets/images/check-mark.png')} />
       </View>
     );
   }
