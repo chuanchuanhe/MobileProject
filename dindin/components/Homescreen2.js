@@ -13,6 +13,6 @@ export default class Homescreen2 extends React.Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'pink',
+      backgroundColor: 'green',
       },
   })

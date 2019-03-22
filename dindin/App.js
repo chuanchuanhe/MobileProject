@@ -1,12 +1,11 @@
 import splash from './components/splash';
 import Homescreen2 from './components/Homescreen2';
+import MainScreen from './components/MainScreen';
+import LoginScreen from './components/LoginScreen';
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import  Homescreen from "./components/Homescreen2"
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
-import MainScreen from './components/MainScreen';
-import LoginScreen from './components/LoginScreen'
 
 const RootStack = createStackNavigator(
   {
@@ -15,7 +14,7 @@ const RootStack = createStackNavigator(
     main: MainScreen,
     splash: splash
   }, {
-    initialRouteName: 'splash'
+    initialRouteName: 'login'
   }
 );
 

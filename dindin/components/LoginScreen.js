@@ -26,7 +26,6 @@ export default class LoginScreen extends React.Component {
           const profile = await response.json();
           console.log("Was Successful")
           navigation.navigate('main', { profile });
-
           break;
         }
         case 'cancel': {
@@ -62,6 +61,7 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+
     flex: 1, 
     justifyContent: 'center',
     alignItems: 'center',
