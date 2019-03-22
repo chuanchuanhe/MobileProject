@@ -6,8 +6,6 @@ import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
-import React from "react";
-import Setup from "./src/boot/setup";
 
 const RootStack = createStackNavigator(
   {
