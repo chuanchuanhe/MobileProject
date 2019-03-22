@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet, Button, Alert } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity, Button, Alert } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Constants, Facebook } from 'expo';
 import MainScreen from './MainScreen';
@@ -12,7 +12,7 @@ export default class LoginScreen extends React.Component {
   async handleFacebookLogin(navigation) {
     try {
       const { type, token } = await Facebook.logInWithReadPermissionsAsync(
-        '1201211719949057', // Replace with your own app id in standalone app
+        '2282859118415869', // Replace with your own app id in standalone app
         { permissions: ['public_profile'] }
       );
       console.log(type + " "+ token)
@@ -25,8 +25,7 @@ export default class LoginScreen extends React.Component {
           );
           const profile = await response.json();
           console.log("Was Successful")
-          navigation.navigate('Main', { profile });
-
+          navigation.navigate('main', { profile });
           break;
         }
         case 'cancel': {
@@ -46,10 +45,15 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          title="Login with Facebook"
-          onPress={() => this.handleFacebookLogin(this.props.navigation)}
-        />
+        <Image style={styles.fbImageStyle} source={require('../assets/images/facebook-icon.png')} />
+        <TouchableOpacity 
+        style={styles.button}
+        onPress={() => 
+        this.handleFacebookLogin(this.props.navigation)
+        }
+        >
+        <Text> Login with Facebook </Text>
+      </TouchableOpacity>
       </View>
     );
   }
@@ -57,8 +61,30 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    paddingTop: Constants.statusBarHeight,
+
+    flex: 1, 
+    justifyContent: 'center',
+    alignItems: 'center',
+    //flexDirection: 'column',
+    //paddingTop: Constants.statusBarHeight,
   },
+  fbImageStyle: {
+    //flex: 1,
+    width: 300,
+    height: 300,
+    resizeMode: 'contain',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 50,
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: 'skyblue',
+    padding: 10, 
+  },
+  buttonPress: {
+    alignItems: 'center',
+    backgroundColor: 'blue',
+    padding: 10, 
+  }
 });
