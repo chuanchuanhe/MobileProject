@@ -7,6 +7,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
 
+
 const RootStack = createStackNavigator(
   {
     home: Homescreen2,

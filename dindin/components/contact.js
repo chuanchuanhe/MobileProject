@@ -1,12 +1,13 @@
 import * as React from 'react';
 import{Image, StyleSheet, Text, View, StatusBar} from 'react-native';
 import { Constants } from 'expo';
-
-// You can import from local files
 import AssetExample from './components/AssetExample';
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
+let data=require('..src/card.json');
+for(i=0;i<data.size();i++){
+  data[i].name;
+  data[i].time;
+}
 
 export default class App extends React.Component {
   render() {

@@ -1,14 +1,15 @@
 import I18n,{ getLanguages } from 'react-native-i18n'
 import DeviceInfo from 'react-native-device-info'
+import { Localization } from 'expo'
 import en from './en'
 import ar from './ar'
 
 
 
-I18n.defaultLocale = 'ar';
+I18n.defaultLocale = 'en';
 // I18n.locale = 'ar'; # to see the arabic version
 I18n.fallbacks = true;
-
+I18n.locale = Localization.locale;
 I18n.translations = {
     en,
     ar,
