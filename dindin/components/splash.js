@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, Animated} from 'react-native'; 
+//import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import {I18n} from '../src/i18n/I18n';
 
-export default class Splash extends React.Component {
+export default class splash extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -27,12 +29,15 @@ export default class Splash extends React.Component {
         {this.props.children}
         <Image style={styles.avatarStyle} source={require('../assets/images/avatar.png')} />
       </Animated.View>
-      <Text style={styles.title}>DinDin </Text>
-      <Text style={styles.subtitle}>connecting food lovers</Text>
+      {/* <Text style={styles.title}>DinDin </Text>
+      <Text style={styles.subtitle}>connecting food lovers</Text> */}
+      <Text style={styles.title}>{I18n.t('DinDin')} </Text>
+      <Text style={styles.subtitle}>{I18n.t('connecting')}</Text>
       <TouchableOpacity 
         style={styles.button}
-        onPress={() => this.props.navigation.navigate('home')}>
-        <Text> Get Started </Text>
+        onPress={() => this.props.navigation.navigate('Login')}>
+        {/*<Text> Get Started </Text> */}
+        <Text> {I18n.t('Get_Started')} </Text>
       </TouchableOpacity> 
     </View> 
     ) 
@@ -73,3 +78,108 @@ export default class Splash extends React.Component {
       padding: 10, 
     }
   })
+/** 
+export default class splash extends React.Component {
+  isMounted = false;
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      avatar1 = new Animated.Value(0),
+      avatar2 = new Animated.Value(0),
+      avatar3 = new Animated.Value(0)
+    }
+  }
+
+  fadeIn1(anim) {
+    Animated.timing(          // Animate over time
+      anim,    // The animated value to drive
+      {
+        toValue: 1,           // Animate to opacity: 1 (opaque)
+        duration: 1200,       // 2000ms
+      }
+    ).start(()=>this.fadeOut1(anim));              
+  }
+
+  fadeOut1(anim) {
+    if (this.isMounted == true) {
+      this.setState({anim: new Animated.Value(1)})
+    }
+    Animated.timing(          // Animate over time
+      anim,    // The animated value to drive
+      {
+        toValue: 0,           // Animate to opacity: 1 (opaque)
+        duration: 1200,       // 2000ms
+      }
+    ).start(()=>this.fadeIn2(this.state.avatar2));  
+  }
+
+  fadeIn2(anim) {
+    Animated.timing(          // Animate over time
+      anim,    // The animated value to drive
+      {
+        toValue: 1,           // Animate to opacity: 1 (opaque)
+        duration: 1200,       // 2000ms
+      }
+    ).start(()=>this.fadeOut2(anim));
+  }
+
+  fadeOut1(anim) {
+    if (this.isMounted == true) {
+      this.setState({anim: new Animated.Value(1)})
+    }
+    Animated.timing(          // Animate over time
+      anim,    // The animated value to drive
+      {
+        toValue: 0,           // Animate to opacity: 1 (opaque)
+        duration: 1200,       // 2000ms
+      }
+    ).start(()=>this.fadeIn2(this.state.avatar3));  
+  }
+
+  fadeIn3(anim) {
+    Animated.timing(          // Animate over time
+      anim,    // The animated value to drive
+      {
+        toValue: 1,           // Animate to opacity: 1 (opaque)
+        duration: 1200,       // 2000ms
+      }
+    ).start(()=>this.fadeOut3(anim));
+  }
+
+  fadeOut3(anim) {
+    if (this.isMounted == true) {
+      this.setState({anim: new Animated.Value(1)})
+    }
+    Animated.timing(          // Animate over time
+      anim,    // The animated value to drive
+      {
+        toValue: 0,           // Animate to opacity: 1 (opaque)
+        duration: 1200,       // 2000ms
+      }
+    ).start();  
+  }
+
+  componentWillMount() {
+    this.fadeIn1(this.state.avatar1)
+  }
+
+  componentDidMount() {
+    this.isMounted = true
+    this.timerId = setInterval(()=>this.fadeIn1(this.state.avatar1))
+  }
+
+  componentWillMount() {
+    this.isMounted = false
+  }
+
+  render() {
+    let {avatar1} = this.state;
+    let {}
+  }
+    return (
+
+    )
+}
+
+**/
