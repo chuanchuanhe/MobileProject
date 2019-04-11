@@ -35,7 +35,7 @@ export default class splash extends React.Component {
       <Text style={styles.subtitle}>{I18n.t('connecting')}</Text>
       <TouchableOpacity 
         style={styles.button}
-        onPress={() => this.props.navigation.navigate('Login')}>
+        onPress={() => this.props.navigation.navigate('login')}>
         {/*<Text> Get Started </Text> */}
         <Text> {I18n.t('Get_Started')} </Text>
       </TouchableOpacity> 

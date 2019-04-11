@@ -1,12 +1,11 @@
 import * as React from 'react';
 import{Image, StyleSheet, Text, View,TouchableOpacity, StatusBar} from 'react-native';
 import { Constants } from 'expo';
-import AssetExample from './components/AssetExample';
 
-let data=require('..src/card.json');
+//let data=require('..src/card.json');
 
 
-export default class App extends React.Component {
+export default class contact extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -18,10 +17,10 @@ export default class App extends React.Component {
         <View style={styles.card}>
             <Image style={styles.circle} source={require('../assets/images/robot-dev.png')}/>
             <Image style={styles.phone} source={require('../assets/images/call.png')}/>
-            <Image style={styles.mail} source={require('../assets/images/mail.jpg')}/>
+            <Image style={styles.mail} source={require('../assets/images/mail.png')}/>
             <View>
-              <Text style={styles.name}>{data[0].name}</Text>
-              <Text style={styles.time}>{data[0].time}</Text>
+              <Text style={styles.name}>George </Text>
+              <Text style={styles.time}>10:00 pm</Text>
             </View>
         </View>
 
@@ -33,7 +32,7 @@ export default class App extends React.Component {
               <TouchableOpacity 
                style={styles.button}
               onPress={() => this.props.navigation.navigate('Login')}>
-              <Text> add new event </Text>
+              <Text> Add New Event </Text>
             </TouchableOpacity> 
           </View>
 
@@ -44,10 +43,10 @@ export default class App extends React.Component {
           <View style={styles.card}>
             <Image style={styles.circle} source={require('../assets/images/robot-prod.png')}/>
             <Image style={styles.phone} source={require('../assets/images/call.png')}/>
-            <Image style={styles.mail} source={require('../assets/images/mail.jpg')}/>
+            <Image style={styles.mail} source={require('../assets/images/mail.png')}/>
             <View>
-              <Text style={styles.name}>{data[1].name}</Text>
-              <Text style={styles.time}>{data[1].time}</Text>
+              <Text style={styles.name}>Mark</Text>
+              <Text style={styles.time}>3:00 pm</Text>
             </View>
           </View>
 
