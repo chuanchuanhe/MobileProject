@@ -10,8 +10,41 @@ export default class contact extends React.Component {
     return (
       <View style={styles.container}>
         
-        <View style={styles.date}>
-            <Text>Tue 12 June</Text>
+        <View  style={{width: 300, alignItems: 'left',marginTop:25,marginBottom:5,justifyContent:'left',}}>
+            <Text>Pending</Text>
+          </View>
+
+          <View style={styles.pending}>
+           <TouchableOpacity 
+                onPress={() => this.props.navigation.navigate('Login')}>
+            <Image style={{alignItems:'center', justifyContent:'center',top:-5,left:5,width: 45, height:45,borderStyle:'solid',
+              borderRadius:20, }} source={require('../assets/images/toto.png')}/>
+            <View>
+              <Text style={{top:-50,left:80,fontWeight:'bold'}}>Alma Evens</Text>
+              <Text style={{top:-40,left:80}}>Sun 17 June - 8:00pm</Text>
+            </View>
+           </TouchableOpacity>
+
+            <View style={{position: "absolute", bottom: 0, right: 0,borderWidth:1,height:50,width:150}}>
+             <TouchableOpacity 
+                onPress={() => this.props.navigation.navigate('Login')}>
+              <Text style={{textAlign: 'center',fontSize:20, marginTop: 10,color:'red'}}>Decline</Text>
+            </TouchableOpacity>
+            </View>
+
+            <View style={{position: "absolute", bottom: 0, left: 0,borderWidth:1,height:50,width:150}}>
+              <TouchableOpacity 
+                onPress={() => this.props.navigation.navigate('Login')}>
+               <Text style={{textAlign: 'center',color:'green',fontSize:20, marginTop: 10}}>Accept</Text>
+              </TouchableOpacity>
+            </View> 
+
+          </View>
+
+
+
+        <View>
+            <Text style={styles.date}>Tue 12 June</Text>
         </View>
 
         <View style={styles.card}>
@@ -24,8 +57,8 @@ export default class contact extends React.Component {
             </View>
         </View>
 
-        <View style={styles.date}>
-            <Text>Wed 13 June</Text>
+        <View >
+            <Text style={styles.date}>Wed 13 June</Text>
           </View>
 
           <View style = {styles.card}>
@@ -36,8 +69,8 @@ export default class contact extends React.Component {
             </TouchableOpacity> 
           </View>
 
-          <View style={styles.date}>
-            <Text>Thu 14 June</Text>
+          <View >
+            <Text style={styles.date}>Thu 14 June</Text>
           </View>
 
           <View style={styles.card}>
@@ -62,8 +95,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderColor:'red',
   },
+  pending:{
+    width: 300,
+    height: 130,
+    padding: 30,
+    borderWidth:1,
+    marginBottom:30,
+
+  },
   date:{
     width:300,
+    fontWeight: 'bold',
     height:40,
     padding:10,
     borderWidth:1,
