@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {auth} from 'firebase';
+//import {auth} from 'firebase';
 import { Button, Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import { Constants, LinearGradient, Image } from 'expo';
-import * as firebase from 'firebase'; 
+//import * as firebase from 'firebase'; 
 import {I18n} from '../src/i18n/I18n';
 
 
@@ -26,10 +26,10 @@ export default class Login extends React.Component {
               );
               const profile = await response.json();
               console.log("Was Successful")
-              this.props.navigation.navigate('home', { profile });
-              const credential = auth.FacebookAuthProvider.credential(token)
-              firebase.auth().signInAndRetrieveDataWithCredential(credential).catch((error) => {
-                  console.log(error) })
+              this.props.navigation.navigate('home2', { profile });
+              //const credential = auth.FacebookAuthProvider.credential(token)
+              //firebase.auth().signInAndRetrieveDataWithCredential(credential).catch((error) => {
+                //  console.log(error) })
               break;
             }
             case 'cancel': {
