@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, Animated} from 'react-native'; 
 //import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import {I18n} from '../src/i18n/I18n';
+//import {I18n} from '../src/i18n/I18n';
 
 export default class splash extends React.Component {
   constructor(props) {
@@ -29,15 +29,15 @@ export default class splash extends React.Component {
         {this.props.children}
         <Image style={styles.avatarStyle} source={require('../assets/images/avatar.png')} />
       </Animated.View>
-      {/* <Text style={styles.title}>DinDin </Text>
-      <Text style={styles.subtitle}>connecting food lovers</Text> */}
-      <Text style={styles.title}>{I18n.t('DinDin')} </Text>
-      <Text style={styles.subtitle}>{I18n.t('connecting')}</Text>
+      {/* <Text style={styles.title}>{I18n.t('DinDin')} </Text>
+      <Text style={styles.subtitle}>{I18n.t('connecting')}</Text> */}
+      <Text style={styles.title}>DinDin </Text>
+      <Text style={styles.subtitle}>connecting food lovers</Text>
       <TouchableOpacity 
         style={styles.button}
         onPress={() => this.props.navigation.navigate('login')}>
-        {/*<Text> Get Started </Text> */}
-        <Text> {I18n.t('Get_Started')} </Text>
+        {/*<Text> {I18n.t('Get_Started')} </Text> */}
+        <Text> Get Started </Text>
       </TouchableOpacity> 
     </View> 
     ) 
@@ -61,7 +61,7 @@ export default class splash extends React.Component {
       fontSize: 23,
       marginTop: 5,
       width: 200,
-      fontFamily: 'Helvetica',
+      //fontFamily: 'Helvetica',
     },
     subtitle:{
       color: 'grey',

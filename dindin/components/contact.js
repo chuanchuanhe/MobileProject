@@ -10,7 +10,7 @@ export default class contact extends React.Component {
     return (
       <View style={styles.container}>
         
-        <View  style={{width: 300, alignItems: 'left',marginTop:25,marginBottom:5,justifyContent:'left',}}>
+        <View  style={{width: 300, alignItems: 'center',marginTop:25,marginBottom:5,justifyContent:'center',}}>
             <Text>Pending</Text>
           </View>
 
@@ -64,7 +64,7 @@ export default class contact extends React.Component {
           <View style = {styles.card}>
               <TouchableOpacity 
                style={styles.button}
-              onPress={() => this.props.navigation.navigate('Login')}>
+              onPress={() => this.props.navigation.navigate('newEvent')}>
               <Text> Add New Event </Text>
             </TouchableOpacity> 
           </View>

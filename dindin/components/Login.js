@@ -3,7 +3,7 @@ import {auth} from 'firebase';
 import { Button, Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import { Constants, LinearGradient, Image } from 'expo';
 import * as firebase from 'firebase'; 
-import {I18n} from '../src/i18n/I18n';
+//import {I18n} from '../src/i18n/I18n';
 
 
 export default class Login extends React.Component {
@@ -51,7 +51,8 @@ export default class Login extends React.Component {
             rounded
             success
             onPress={() => this.loginwithFacebook()}
-            title= {I18n.t('Login')} 
+            title= 'Login with Facebook'
+            //title= {I18n.t('Login')} 
           >
           </Button>
       ) 
