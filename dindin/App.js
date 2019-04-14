@@ -1,5 +1,6 @@
 import splash from './components/splash';
 import contact from './components/contact';
+import detail from './components/detail';
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import  Homescreen from "./components/Homescreen";
@@ -13,6 +14,7 @@ const RootStack = createStackNavigator(
     splash: splash,
     login: Login,
     home2:contact,
+    detail:detail,
   }, {
     initialRouteName: 'splash'
   }

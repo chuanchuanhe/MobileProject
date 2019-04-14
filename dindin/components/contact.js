@@ -10,18 +10,18 @@ export default class contact extends React.Component {
     return (
       <View style={styles.container}>
         
-        <View  style={{width: 300, alignItems: 'left',marginTop:25,marginBottom:5,justifyContent:'left',}}>
+        <View  style={{width: 300, alignItems: 'left',marginTop:10,marginBottom:5,justifyContent:'left',}}>
             <Text>Pending</Text>
           </View>
 
           <View style={styles.pending}>
            <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Login')}>
-            <Image style={{alignItems:'center', justifyContent:'center',top:-5,left:5,width: 45, height:45,borderStyle:'solid',
+                onPress={() => this.props.navigation.navigate('detail')}>
+            <Image style={{alignItems:'center', justifyContent:'center',top:-5,left:5,width: 45, height:45,
               borderRadius:20, }} source={require('../assets/images/toto.png')}/>
             <View>
               <Text style={{top:-50,left:80,fontWeight:'bold'}}>Alma Evens</Text>
-              <Text style={{top:-40,left:80}}>Sun 17 June - 8:00pm</Text>
+              <Text style={{top:-45,left:80}}>Sun 17 June - 8:00pm</Text>
             </View>
            </TouchableOpacity>
 
@@ -61,7 +61,7 @@ export default class contact extends React.Component {
             <Text style={styles.date}>Wed 13 June</Text>
           </View>
 
-          <View style = {styles.card}>
+          <View style = {{width: 300,height: 80,padding: 10}}>
               <TouchableOpacity 
                style={styles.button}
               onPress={() => this.props.navigation.navigate('Login')}>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     //borderRadius: 3,
     width: 300,
     height: 100,
-    padding: 10
+    padding: 5
   },
   phone:{
     top:-20,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   button:{
     width: 150,
     height: 40,
-    top:20,
+    top:10,
     left:60,
     alignItems: 'center',
     backgroundColor: 'skyblue',
