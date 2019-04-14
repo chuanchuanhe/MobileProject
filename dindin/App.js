@@ -1,15 +1,20 @@
 import splash from './components/splash';
-import Homescreen2 from './components/Homescreen2';
+import contact from './components/contact';
+import detail from './components/detail';
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import  Homescreen from "./components/Homescreen2"
+import  Homescreen from "./components/Homescreen";
+import Login from './components/Login';
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
 
 const RootStack = createStackNavigator(
   {
-    home: Homescreen2,
-    splash: splash
+    home: Homescreen,
+    splash: splash,
+    login: Login,
+    home2:contact,
+    detail:detail,
   }, {
     initialRouteName: 'splash'
   }
