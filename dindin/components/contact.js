@@ -64,7 +64,7 @@ export default class contact extends React.Component {
           <View style = {{width: 300,height: 80,padding: 10}}>
               <TouchableOpacity 
                style={styles.button}
-              onPress={() => this.props.navigation.navigate('Login')}>
+              onPress={() => this.props.navigation.navigate('newEvent')}>
               <Text> Add New Event </Text>
             </TouchableOpacity> 
           </View>

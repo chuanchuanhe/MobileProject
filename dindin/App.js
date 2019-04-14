@@ -5,8 +5,13 @@ import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import  Homescreen from "./components/Homescreen";
 import Login from './components/Login';
+import NewEvent from './components/NewEvent'
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
+
+if (typeof global !== 'undefined') {
+  var self = global.self;
+}
 
 const RootStack = createStackNavigator(
   {
@@ -15,6 +20,7 @@ const RootStack = createStackNavigator(
     login: Login,
     home2:contact,
     detail:detail,
+    newEvent: NewEvent,
   }, {
     initialRouteName: 'splash'
   }
