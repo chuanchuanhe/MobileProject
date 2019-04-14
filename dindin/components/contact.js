@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
     width: 45,
     height:45,
     borderColor:'green',
-    borderStyle:'solid',
     borderRadius:20, 
     },
   name: {

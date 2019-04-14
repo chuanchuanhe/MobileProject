@@ -21,8 +21,7 @@ export default class detail extends React.Component {
         <View style={styles.container}>
           <View style={{width: 300,height: 240,padding: 30,borderWidth:1,top:0,position:'absolute'}}>   
            
-           <TouchableOpacity 
-                onPress={() => this.props.navigation.navigate('Login')}>
+
             <Image style={{top:0,left:100,justifyContent: 'center',alignItems: 'center',width: 60, height:60,borderRadius:30 }} 
                 source={require('../assets/images/toto.png')}/>
             <View>
@@ -30,7 +29,6 @@ export default class detail extends React.Component {
               <Text style={{textAlign: 'center'}}>Sun 17 June - 8:00pm</Text>
               <Text style={{textAlign: 'center',paddingTop:10,color:'gray'}}>Host by Alma Evans</Text>
             </View>
-           </TouchableOpacity>
            
             <View style={{position: "absolute", bottom: 0, right: 0,borderWidth:1,height:50,width:150}}>
              <TouchableOpacity 
