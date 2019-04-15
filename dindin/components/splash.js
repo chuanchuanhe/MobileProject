@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Dimensions, Text, View, StyleSheet, Image, TouchableOpacity, Animated,} from 'react-native'; 
 //import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import {I18n} from '../src/i18n/I18n';
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 
 
 
@@ -116,10 +118,16 @@ export default class splash extends React.Component {
           <Text style={styles.subtitle}>{I18n.t('connecting')}</Text>
       </View>
       <View style={styles.start}>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-          <Image style={styles.buttonBar} source={require('../assets/images/getStarted.png')}/>
+        {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+        <Image style={styles.buttonBar} source={require('../assets/images/getStarted.png')}/> */}
           
-        </TouchableOpacity> 
+        {/*</TouchableOpacity>  */}
+        <TouchableOpacity 
+        style={styles.button}
+        onPress={() => this.props.navigation.navigate('login')}>
+        {/*<Text> Get Started </Text> */}
+        <Text style ={styles.buttonText}> {I18n.t('Get_Started')} </Text>
+      </TouchableOpacity> 
       </View>
     </View> 
     ) 
@@ -146,7 +154,12 @@ export default class splash extends React.Component {
       width: 259,
       height: 259,
     },
+    button:{
+    backgroundColor: 'skyblue',
+    width:windowWidth,
+    height:50,
 
+    },
     title: {
       //textAlign: 'center', 
       //fontWeight: 'bold',
@@ -197,7 +210,9 @@ export default class splash extends React.Component {
     },
     buttonText: {
       fontFamily: 'System',
-      fontSize:14,
+      fontSize:20,
+      top:10,
+      justifyContent:'center',
       textAlign:'center',
     },
 
