@@ -1,23 +1,50 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import{Image, StyleSheet, Text, View,TouchableOpacity, StatusBar} from 'react-native';
-import { Constants } from 'expo';
-import { MapView } from 'expo';
+import { Constants, MapView, Location, Permissions } from 'expo';
 
 //let data=require('..src/card.json');
 
+const pinColor = '#000000';
 
 export default class detail extends React.Component {
+  state = {
+    mapRegion: null,
+    hasLocationPermissions: false,
+    locationResult: null,
+    latitude: 39.0317,
+    longitude: -78.50268,
+  };
+
+  componentDidMount() {
+    this._getLocationAsync();
+  }
+
+  _handleMapRegionChange = mapRegion => {
+    console.log(mapRegion);
+    this.setState({ mapRegion });
+  };
+
+  _getLocationAsync = async () => {
+   let { status } = await Permissions.askAsync(Permissions.LOCATION);
+   if (status !== 'granted') {
+     this.setState({
+       locationResult: 'Permission to access location was denied',
+     });
+   } else {
+     this.setState({ hasLocationPermissions: true });
+   }
+
+   let location = await Location.getCurrentPositionAsync({});
+   this.setState({ locationResult: JSON.stringify(location) });
+   
+   // Center the map on the location we just fetched.
+    this.setState({mapRegion: { latitude: location.coords.latitude, longitude: location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }});
+    this.setState({latitude: location.coords.latitude})
+    this.setState({longitude: location.coords.longitude})
+};
+    
   render() {
     return (
-    //   <MapView
-    //   style={{ flex: 1 }}
-    //   initialRegion={{
-    //     latitude: 38.0293059,
-    //     longitude: -78.4766781,
-    //     latitudeDelta: 0.0922,
-    //     longitudeDelta: 0.0421,
-    //   }}
-    // />
         <View style={styles.container}>
           <View style={{width: 300,height: 240,padding: 30,borderWidth:1,top:0,position:'absolute'}}>   
            
@@ -43,26 +70,45 @@ export default class detail extends React.Component {
                <Text style={{textAlign: 'center',color:'green',fontSize:20, marginTop: 10}}>Accept</Text>
               </TouchableOpacity>
             </View> 
-        </View> 
+          </View> 
     
-              
-       
-        <MapView style={{position: "absolute", bottom: 0,width:350,height:350}}
-            initialRegion={{
-                latitude: 38.0293059,
-                longitude: -78.4766781,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-        }}>
+          {
+            this.state.locationResult === null ?
+            <Text>Finding your current location...</Text> :
+            this.state.hasLocationPermissions === false ?
+              <Text>Location permissions are not granted.</Text> :
+              this.state.mapRegion === null ?
+              <Text>Map region doesn't exist.</Text> :
+              <MapView 
+                style={{position: "absolute", bottom: 0,width:350,height:350}}
+                initialRegion={{
+                  latitude: 38.0293059,
+                  longitude: -78.4766781,
+                  latitudeDelta: 0.0922,
+                  longitudeDelta: 0.0421,
+                }}>
+              <MapView.Marker
+                coordinate={{latitude:38.0316,longitude: -78.4897}}
+                description={"dinner"} 
+                //pinColor='#000000'
+                />
+                <MapView.Marker
+                  coordinate={{
+                    latitude: this.state.latitude,
+                    longitude: this.state.longitude
+                  }}
+                  description={"current location"} 
+                  //pinColor='blue'
+                  pinColor={'#000000'}
+                />
 
-        <MapView.Marker
-            coordinate={{latitude:38.0316,longitude: -78.4897}}
-            description={"dinner"} />
+                </MapView>
+          }
 
-            </MapView>
-        
-
-
+          {/* <Text>
+          Latitude: {this.state.latitude}
+          Longitude: {this.state.longitude}
+          </Text>       */}
       </View>
     );
   }
