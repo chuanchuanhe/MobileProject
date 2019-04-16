@@ -144,11 +144,6 @@ export default class App extends Component {
             </View>
 
             <View style={styles.mapContainer}>
-                {/* <TouchableOpacity 
-                    style={styles.button}
-                    onPress={() => this.props.navigation.navigate('newEventLocation')}>
-                    <Text> Set a location </Text>
-                </TouchableOpacity> */}
 
                 <Text style={styles.paragraph}>
                 Enter an address or use your current location!
@@ -170,7 +165,7 @@ export default class App extends Component {
                 <View style={styles.locationButtonContainer}>
                 <TouchableOpacity 
                     style={styles.locationButton}
-                    onPress={() => this.props.navigation.navigate('newEventLocation')}>
+                    onPress={() => this.props.navigation.navigate('newEventSetLocation')}>
                     <Text> Enter </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 

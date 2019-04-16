@@ -7,6 +7,7 @@ import  Homescreen from "./components/Homescreen";
 import Login from './components/Login';
 import NewEvent from './components/NewEvent'
 import NewEventLocation from './components/NewEventLocation'
+import NewEventSetLocation from './components/NewEventSetLocation'
 import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 import { Constants } from 'expo';
 
@@ -23,6 +24,7 @@ const RootStack = createStackNavigator(
     detail:detail,
     newEvent: NewEvent,
     newEventLocation: NewEventLocation,
+    newEventSetLocation: NewEventSetLocation,
   }, {
     initialRouteName: 'splash'
   }
