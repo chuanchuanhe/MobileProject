@@ -118,18 +118,12 @@ export default class splash extends React.Component {
           <Text style={styles.subtitle}>{I18n.t('connecting')}</Text>
       </View>
       <View style={styles.start}>
-        
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('login')}>
-          <Image style={styles.buttonBar} source={require('../assets/images/getStarted.png')}/>
-
-          
-        {/*</TouchableOpacity>  */}
         <TouchableOpacity 
-        style={styles.button}
-        onPress={() => this.props.navigation.navigate('login')}>
-        {/*<Text> Get Started </Text> */}
-        <Text style ={styles.buttonText}> {I18n.t('Get_Started')} </Text>
-      </TouchableOpacity> 
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('login')}>
+            {/*<Text> Get Started </Text> */}
+            <Text style ={styles.buttonText}> {I18n.t('Get_Started')} </Text>
+        </TouchableOpacity> 
       </View>
     </View> 
     ) 
