@@ -99,7 +99,7 @@ export default class detail extends React.Component {
                   }}
                   description={"current location"} 
                   //pinColor='blue'
-                  pinColor={'#000000'}
+                  pinColor={'#42b3f4'}
                 />
 
                 </MapView>
