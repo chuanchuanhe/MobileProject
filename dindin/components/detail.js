@@ -4,8 +4,6 @@ import { Constants, MapView, Location, Permissions } from 'expo';
 
 //let data=require('..src/card.json');
 
-const pinColor = '#000000';
-
 export default class detail extends React.Component {
   state = {
     mapRegion: null,

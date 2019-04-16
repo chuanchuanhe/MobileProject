@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Picker, TouchableOpacity, AppRegistry, TextInput } from 'react-native';
+import { Text, View, StyleSheet, Picker, TouchableOpacity, AppRegistry, TextInput, KeyboardAvoidingView } from 'react-native';
 import { Constants, MapView } from 'expo';
 
 export default class App extends Component {
@@ -44,6 +44,7 @@ export default class App extends Component {
   
   render() {
     return (
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
         <View style = {styles.container} >
             <Text style={styles.paragraph}>
                 Set a time for your event!
@@ -208,7 +209,7 @@ export default class App extends Component {
                 </Text> */}
             </View>
         </View>
-      
+        </KeyboardAvoidingView>
     );
   }
 }
