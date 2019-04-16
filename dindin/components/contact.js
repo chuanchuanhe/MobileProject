@@ -10,7 +10,7 @@ export default class contact extends React.Component {
     return (
       <View style={styles.container}>
         
-        <View  style={{width: 300, alignItems: 'left',marginTop:10,marginBottom:5,justifyContent:'left',}}>
+        <View  style={{width: 300, alignItems: 'center',marginTop:10,marginBottom:5,justifyContent:'center',}}>
             <Text>Pending</Text>
           </View>
 
