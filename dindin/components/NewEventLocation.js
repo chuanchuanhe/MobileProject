@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Constants, MapView, Location, Permissions } from 'expo';
+import Geocoder from 'react-native-geocoding';
 
 export default class App extends Component {
   state = {
@@ -9,10 +10,23 @@ export default class App extends Component {
     locationResult: null,
     latitude: null,
     longitude: null,
+    address: null,
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this._getLocationAsync();
+  }
+  componentDidMount () {
+    Geocoder.setApiKey('AIzaSyAJId6vHhpa4SD8hkGyVW7AS0g_6EOHGLM'); 
+    Geocoder.from("University of Virginia Rice Hall").then(
+      json => {
+        var addressComponent = json.results[0].formatted_address;
+        this.setState({address: addressComponent });
+      },
+      error => {
+        alet(error);
+      }
+    );
   }
 
   _handleMapRegionChange = mapRegion => {
@@ -39,6 +53,8 @@ export default class App extends Component {
     this.setState({longitude : location.coords.longitude})
 };
 
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -64,8 +80,9 @@ export default class App extends Component {
           Latitude: {this.state.latitude}
           Longitude: {this.state.longitude}
         </Text>
-        <Text> 
-            Address: {this.state.locationResult}
+        
+        <Text>
+          Address: {this.state.address}
         </Text>
       </View>
         
@@ -75,7 +92,7 @@ export default class App extends Component {
  
 //     // Coordinates to center the map
 //     var myLatlng = new google.maps.LatLng(-23.0078349,-43.3149783);
- 
+
 //     // Other options for the map, pretty much selfexplanatory
 //     var mapOptions = {
 //         zoom: 14,

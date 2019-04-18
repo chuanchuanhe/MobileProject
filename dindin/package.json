@@ -18,6 +18,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-device-info": "^1.4.3",
     "react-native-firebase": "^5.3.1",
+    "react-native-geocoding": "^0.3.0",
     "react-native-i18n": "^2.0.15",
     "react-native-maps": "^0.24.0",
     "react-navigation": "^3.0.9",
